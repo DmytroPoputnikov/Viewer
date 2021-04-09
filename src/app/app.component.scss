@@ -1,0 +1,21 @@
+body { padding: 1rem}
+
+
+.posts{
+    font-size: 42px;
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@media (min-width:600px){
+    .posts{grid-template-columns: repeat(2,1fr); }
+}
+
+@media (min-width: 900px) {
+    .posts { grid-template-columns: repeat(3, 1fr); }
+  }

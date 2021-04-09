@@ -1,0 +1,56 @@
+.post{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dodgerblue;
+    color:white;
+    padding: 1 rem;
+    height: 15rem;
+    border-radius: 10px;
+    animation: show 0.5s;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+    
+}
+
+.post-image{
+    z-index: 1;
+    border-radius: 10px;
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
+
+.post:hover{
+   
+    .descr{
+        opacity: 100%;
+        animation: show 1s;
+    }
+    .post-image{
+        opacity: 50%;
+    }
+
+}
+
+.descr{
+    opacity: 0%;
+    z-index:2;
+}
+
+.like{
+    filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(5);
+}
+
+
+
