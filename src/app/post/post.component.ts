@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Post} from './post';
 
 @Component({
   selector: 'app-post',
@@ -6,11 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  @Input('image') url?: string;
-  @Input('image') text?: string;
-  constructor() { }
+  post = new Post();
+
+  @Input('image') image?: string;
+  @Input() title?: string;
+  likeStatus:boolean = false; //status of favorite icon
+
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }
+
+  
 
 }

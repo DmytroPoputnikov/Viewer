@@ -1,15 +1,21 @@
 .post{
-    position:relative;
+    height: 100%;
+    min-height: 250px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: dodgerblue;
-    color:white;
-    padding: 1 rem;
-    height: 15rem;
-    border-radius: 10px;
-    animation: show 0.5s;
+    flex-direction: column;
 }
+
+
+.post-wrapper{
+    flex: 8;
+    position: relative;
+    color:white;
+    border-radius: 10px;
+    animation: show 1.5s;
+    background-size: 100%;
+}
+
+
 
 @keyframes show {
     0%{
@@ -22,35 +28,121 @@
 }
 
 .post-image{
-    z-index: 1;
+    position: absolute;
+    bottom: 0;
     border-radius: 10px;
-    position:absolute;
-    left:0;
-    top:0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    height: 100%;
+    height:95%;  /* responsive height */
+    transition: height 0.5s;
+  
 }
 
-.post:hover{
-   
-    .descr{
-        opacity: 100%;
-        animation: show 1s;
+.post-image:hover{
+    height:100%;  /* responsive height */
+    animation: post_selected 0.5s;
+}
+
+
+
+
+@keyframes post_selected{
+    0%{
+        height:95%; 
     }
-    .post-image{
-        opacity: 50%;
+    100%{
+        height:100%; 
     }
 
 }
+
 
 .descr{
-    opacity: 0%;
-    z-index:2;
+    flex:1;
+    bottom:0;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+}
+
+.title{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.descr-text{
+    font-size: 14px;
+    color: gray;
 }
 
 .like{
-    filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(5);
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
+
+img {
+    max-width: 100%;
+  }
+  
+  .modal {
+    max-width: 576px;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 1s;
+  
+    &__checkbox {
+      display: none;
+  
+      &:checked ~ div {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  
+    &__label {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  
+    &__window {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      visibility: hidden;
+      opacity: 0;
+      transition: 1s;
+    }
+  
+    &__content {
+      max-width: 576px;
+      background: white;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+  
+    &__close-icon {
+      cursor: pointer;
+      width: 1.5rem;
+      margin: 0 0.5rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #657ced;
+    }
+  }
 
 

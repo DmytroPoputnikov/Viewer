@@ -1,9 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,body{
-  margin:0;
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@100&display=swap');
 
-  background-color: rgb(4,61,112)
+ 
+:root {
+  --base-color: rgb(0,0,0)
+
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding:0;
 }
 

@@ -1,7 +1,16 @@
-<div class="post">
-    <img  class="post-image" src="https://source.unsplash.com/random" alt="">
-    <div class="descr">
-        <ng-content></ng-content>
-        <img src="../../assets/like-svgrepo-com.svg" alt="like" class="like">
+<div class="post" >
+
+    <div class="post-wrapper">
+        <div class= "post-image modal__label" for="modal__checkbox" [style.background-image]="'url(' + image + ') '"  >
+            <div class="like"  *ngIf="post.numberOfLikes===0"> <img src="../../assets/favorite_border_white_24dp.svg" alt="" (click)="post.increaseLikes()"> </div>
+            <div class="like" *ngIf="post.numberOfLikes>0"> <img src="../../assets/favorite_white_24dp.svg" alt="" (click)="post.decreaseLikes()">  </div>  
+        </div>
+    </div>        
+
+    <div class="descr" >
+            <div class="title" [innerHTML]="title" ></div>
+            <div class="descr-text"> <ng-content ></ng-content> </div>  
     </div>
+    
+   
 </div>
